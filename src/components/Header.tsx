@@ -1,4 +1,4 @@
-import { Search, ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown, Globe } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { translations, type Language } from '../i18n/translations';
@@ -11,7 +11,7 @@ const languageOptions: Array<{ value: Language; label: string }> = [
 ];
 
 export function Header() {
-  const { searchQuery, setSearchQuery, language, setLanguage } = useStore();
+  const { language, setLanguage } = useStore();
   const t = translations[language];
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -30,26 +30,13 @@ export function Header() {
   const selectedLabel = languageOptions.find((option) => option.value === language)?.label ?? 'English';
 
   return (
-    <header className="bg-white border-b border-neutral-200 px-6 py-4">
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex-1 max-w-2xl">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={t.search.placeholder}
-              className="w-full pl-12 pr-4 py-3 bg-neutral-100 border-0 rounded-lg text-neutral-900 placeholder-neutral-400 focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
-            />
-          </div>
-        </div>
-
+    <header className="bg-white border-b border-neutral-200 px-6 py-3">
+      <div className="flex items-center justify-end gap-4">
         <div ref={dropdownRef} className="relative inline-flex items-center rounded-2xl border border-neutral-200 bg-neutral-100 p-2 transition-colors hover:bg-neutral-200">
           <button
             type="button"
             onClick={() => setDropdownOpen((open) => !open)}
-            className="inline-flex items-center gap-3 rounded-2xl px-4 py-3 text-neutral-700 focus:outline-none"
+            className="inline-flex items-center gap-3 rounded-2xl px-4 py-2 text-neutral-700 focus:outline-none"
           >
             <Globe size={20} className="text-neutral-600" />
             <span className="text-sm font-semibold text-neutral-900">{selectedLabel}</span>

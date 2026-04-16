@@ -2,10 +2,10 @@ import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
 import { KnowledgeCard } from '../components/KnowledgeCard';
 import { categories } from '../data/mockData';
-import { Filter } from 'lucide-react';
+import { Filter, Search } from 'lucide-react';
 
 export function KnowledgeBase() {
-  const { knowledgeItems, searchQuery, selectedCategory, setSelectedCategory, language } = useStore();
+  const { knowledgeItems, searchQuery, setSearchQuery, selectedCategory, setSelectedCategory, language } = useStore();
   const t = translations[language];
 
   const filteredItems = knowledgeItems.filter((item) => {
@@ -26,7 +26,18 @@ export function KnowledgeBase() {
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 mb-2">
           {t.knowledgeBase.title}
         </h1>
-        <p className="text-neutral-600">{t.knowledgeBase.subtitle}</p>
+        <p className="text-neutral-600 mb-6">{t.knowledgeBase.subtitle}</p>
+
+        <div className="relative mb-6 max-w-2xl">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" size={20} />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={t.search.placeholder}
+            className="w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-12 py-4 text-base text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-100"
+          />
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">

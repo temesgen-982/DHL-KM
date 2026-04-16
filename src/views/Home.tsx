@@ -1,9 +1,9 @@
 import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
-import { BookOpen, TrendingUp, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, TrendingUp, Users } from 'lucide-react';
 
 export function Home() {
-  const { knowledgeItems, setCurrentView, language } = useStore();
+  const { knowledgeItems, setCurrentView, language, searchQuery, setSearchQuery } = useStore();
   const t = translations[language];
 
   const recentItems = knowledgeItems.slice(0, 3);
@@ -21,10 +21,45 @@ export function Home() {
         <h1 className="text-4xl font-bold tracking-tight text-neutral-900 mb-4">
           {t.home.welcome}
         </h1>
-        <p className="text-lg text-neutral-600">
+        <p className="text-lg text-neutral-600 mb-8">
           {t.home.description}
         </p>
       </div>
+
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          setCurrentView('knowledge-base');
+        }}
+        className="w-full rounded-2xl bg-white p-4 border border-neutral-200"
+      >
+        <div className="flex flex-col gap-4">
+          <div>
+            <label htmlFor="home-search" className="sr-only">
+              {t.home.searchPlaceholder}
+            </label>
+            <textarea
+              id="home-search"
+              rows={4}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={t.home.searchPlaceholder}
+              className="w-full rounded-2xl px-1 py-4 text-base text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-100 resize-none"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-neutral-500">{t.home.aiSearchLabel}</p>
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-4 text-sm font-semibold text-neutral-950 transition-colors hover:bg-amber-600"
+            >
+              {t.home.searchButton}
+              <ArrowRight className="ml-2" size={18} />
+            </button>
+          </div>
+        </div>
+      </form>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <button

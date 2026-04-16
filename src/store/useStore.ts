@@ -17,8 +17,8 @@ interface AppState {
   setSelectedItem: (item: KnowledgeItem | null) => void;
   isQuickAddOpen: boolean;
   setIsQuickAddOpen: (open: boolean) => void;
-  currentView: 'home' | 'knowledge-base' | 'localization' | 'analytics';
-  setCurrentView: (view: 'home' | 'knowledge-base' | 'localization' | 'analytics') => void;
+  currentView: 'home' | 'knowledge-base' | 'localization' | 'analytics' | 'faq';
+  setCurrentView: (view: 'home' | 'knowledge-base' | 'localization' | 'analytics' | 'faq') => void;
 }
 
 export const useStore = create<AppState>()(

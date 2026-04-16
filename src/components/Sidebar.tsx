@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Home, BookOpen, Globe, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Home, BookOpen, Globe, BarChart3, HelpCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
 
@@ -11,6 +11,7 @@ export function Sidebar() {
   const navItems = [
     { id: 'home' as const, icon: Home, label: t.nav.home },
     { id: 'knowledge-base' as const, icon: BookOpen, label: t.nav.knowledgeBase },
+    { id: 'faq' as const, icon: HelpCircle, label: t.nav.faq },
     { id: 'localization' as const, icon: Globe, label: t.nav.localization },
     { id: 'analytics' as const, icon: BarChart3, label: t.nav.analytics },
   ];

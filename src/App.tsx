@@ -5,6 +5,7 @@ import { Home } from './views/Home';
 import { KnowledgeBase } from './views/KnowledgeBase';
 import { Localization } from './views/Localization';
 import { Analytics } from './views/Analytics';
+import { FAQ } from './views/FAQ';
 import { QuickAddModal } from './components/QuickAddModal';
 import { DocumentView } from './components/DocumentView';
 import { FloatingActionButton } from './components/FloatingActionButton';
@@ -22,6 +23,8 @@ function App() {
         return <Localization />;
       case 'analytics':
         return <Analytics />;
+      case 'faq':
+        return <FAQ />;
       default:
         return <Home />;
     }
