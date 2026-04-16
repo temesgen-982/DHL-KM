@@ -1,4 +1,4 @@
-export type Language = 'en' | 'am';
+export type Language = 'en' | 'am' | 'om' | 'ti';
 
 export const translations = {
   en: {
@@ -20,7 +20,7 @@ export const translations = {
     },
     knowledgeBase: {
       title: 'Knowledge Repository',
-      subtitle: 'The Crown Jewels of DHL Ethiopia',
+      subtitle: 'The Knowledge Bases of DHL Ethiopia',
       filterAll: 'All Categories',
     },
     quickAdd: {
@@ -90,7 +90,7 @@ export const translations = {
       titlePlaceholder: 'የትምህርት ርዕስ አስገባ...',
       categoryLabel: 'ምድብ',
       contentLabel: 'ዝርዝሮች',
-      contentPlaceholder: 'የተማሪውን ትምህርት ገልፅ...',
+      contentPlaceholder: 'የተማሪዎቹን ትምህርት ገልፅ...',
       submit: 'ወደ ስራ እውቀት ጨምር',
       cancel: 'ሰርዝ',
     },
@@ -121,6 +121,128 @@ export const translations = {
     common: {
       viewAll: 'ሁሉንም ይመልከት',
       readMore: 'ተጨማሪ አንብብ',
+    },
+  },
+  om: {
+    appName: 'DHL Kutaa Beekkumsaa',
+    nav: {
+      home: 'Mana',
+      knowledgeBase: 'Qabatama Beekumsa',
+      localization: 'Meeshaalee Afaanii',
+      analytics: 'Xiinxala',
+    },
+    search: {
+      placeholder: 'Kaardii beekumsa barbaadi...',
+    },
+    categories: {
+      'Customs Clearance': 'Eegumsa Albuuda',
+      'Pricing': 'Gatii',
+      'SOPs': 'Tarsiimoo Hojii',
+      'Problem Solving': 'Furmaata Rakkoo',
+    },
+    knowledgeBase: {
+      title: 'Kuusaa Beekumsa',
+      subtitle: 'Kuusaa beekumsa DHL Itoophiyaa',
+      filterAll: 'Hundaa Filadhu',
+    },
+    quickAdd: {
+      title: 'Barnoota Fudhachuuf Dabaluu',
+      titleLabel: 'Mata Duree',
+      titlePlaceholder: 'Mata duree barnootaa galchi...',
+      categoryLabel: 'Kategorii',
+      contentLabel: 'Bal’ina',
+      contentPlaceholder: 'Barnoota barbachisu ibsi...',
+      submit: 'Kuusaa Beekumsa keessatti ida’i',
+      cancel: 'Haqu',
+    },
+    documentView: {
+      tags: 'Mallattoolee',
+      author: 'Barreessaa',
+      date: 'Uumame',
+      close: 'Cufi',
+    },
+    analytics: {
+      title: 'Gabatee Xiinxala',
+      onboarding: 'Guddina Hirmaannaa',
+      contributions: 'Gumaacha Beekumsa',
+      totalCards: 'Kaardii Beekumsa Guutuu',
+      categories: 'Kategooriiwwan',
+      recentAdditions: 'Dabalata Dhiyoo',
+    },
+    home: {
+      welcome: 'DHL Kutaa Beekkumsaa keessatti baga nagaan dhuftan',
+      description: 'Bu’uurri galmee beekumsa, tarsiimoo hojii fi barnoota hubannoo.',
+      quickActions: 'Dalagaa Ariifachiisaa',
+      recentKnowledge: 'Beekumsa Dhiyoo',
+      stats: 'Tarree',
+    },
+    fab: {
+      add: 'Barnoota Ida’i',
+    },
+    common: {
+      viewAll: 'Hundaa Ilaali',
+      readMore: 'Dabalata Dubbisi',
+    },
+  },
+  ti: {
+    appName: 'DHL ማዕከል ናይ እውቀት',
+    nav: {
+      home: 'ቤት',
+      knowledgeBase: 'ታንከል እውቀት',
+      localization: 'መሣርያታት ቋንቋ',
+      analytics: 'ፍርያ',
+    },
+    search: {
+      placeholder: 'እቲ እውቀት ካርድ ፈልግ...',
+    },
+    categories: {
+      'Customs Clearance': 'ግብሪ ሓሳብ',
+      'Pricing': 'ዋጋ',
+      'SOPs': 'ዝተለገሰ ስርዓት',
+      'Problem Solving': 'መፍታት ችግን',
+    },
+    knowledgeBase: {
+      title: 'ማእከል እውቀት',
+      subtitle: 'እውቀት ማእከል ንDHL ኢትዮጵያ',
+      filterAll: 'ንቁሉ ምድብ',
+    },
+    quickAdd: {
+      title: 'ፈጥነሲ ትምህርቲ ኣኽልእ',
+      titleLabel: 'ርእሲ',
+      titlePlaceholder: 'ርእሲ ትምህርቲ ኣምጽእ...',
+      categoryLabel: 'ምድብ',
+      contentLabel: 'ዝርዝር',
+      contentPlaceholder: 'ብዝርዝር ትምህርቲ ኣገልግሎም...',
+      submit: 'ናብ ማእከል እውቀት ኣኽልእ',
+      cancel: 'ሰርዝ',
+    },
+    documentView: {
+      tags: 'ምልክታት',
+      author: 'መጻኢ',
+      date: 'ተፈጠረ',
+      close: 'ዕጽወ',
+    },
+    analytics: {
+      title: 'ዳሽቦርድ ፍርያ',
+      onboarding: 'ሂወት መታቦ',
+      contributions: 'እውቀት ኣባልነት',
+      totalCards: 'ኩሉ ካርድ እውቀት',
+      categories: 'ብምድብ',
+      recentAdditions: 'ናይ ድሕሪ ገጽ ኣቐማነት',
+    },
+    home: {
+      welcome: 'እንቋዕ ደሓን መጻእኩም ናብ DHL እውቀት ማእከል',
+      description: 'ማእከል ናይ ሎጂስቲክስ እውቀት፣ እታ ዝተሓሰበ ስራሕ ሂወትን ትምህርቲ ምብጻሕን.',
+      quickActions: 'ፈጣን እቕታታም',
+      recentKnowledge: 'ናይ ድሕሪ ጉዳይ እውቀት',
+      stats: 'ስታቲስቲክስ',
+    },
+    fab: {
+      add: 'ትምህርቲ ኣኽልእ',
+    },
+    common: {
+      viewAll: 'ኩሉን ኣብ ናይ ተመልከት',
+      readMore: 'ዝተጨማሪ ኣንብብ',
     },
   },
 };

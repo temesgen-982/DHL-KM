@@ -52,6 +52,36 @@ export function Localization() {
               </p>
               <p className="text-sm text-neutral-500">Amharic</p>
             </button>
+
+            <button
+              onClick={() => setLanguage('om')}
+              className={`p-6 rounded-xl border-2 transition-all ${
+                language === 'om'
+                  ? 'border-amber-500 bg-amber-50'
+                  : 'border-neutral-200 hover:border-neutral-300'
+              }`}
+            >
+              <Globe className={`mb-3 ${language === 'om' ? 'text-amber-500' : 'text-neutral-400'}`} size={32} />
+              <p className={`font-semibold ${language === 'om' ? 'text-amber-700' : 'text-neutral-900'}`}>
+                Afaan Oromoo
+              </p>
+              <p className="text-sm text-neutral-500">Oromo</p>
+            </button>
+
+            <button
+              onClick={() => setLanguage('ti')}
+              className={`p-6 rounded-xl border-2 transition-all ${
+                language === 'ti'
+                  ? 'border-amber-500 bg-amber-50'
+                  : 'border-neutral-200 hover:border-neutral-300'
+              }`}
+            >
+              <Globe className={`mb-3 ${language === 'ti' ? 'text-amber-500' : 'text-neutral-400'}`} size={32} />
+              <p className={`font-semibold ${language === 'ti' ? 'text-amber-700' : 'text-neutral-900'}`}>
+                ትግርኛ
+              </p>
+              <p className="text-sm text-neutral-500">Tigrinya</p>
+            </button>
           </div>
         </div>
 
