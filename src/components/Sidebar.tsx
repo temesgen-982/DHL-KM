@@ -22,7 +22,7 @@ export function Sidebar() {
         collapsed ? 'w-20' : 'w-72'
       }`}
     >
-      <div className="flex items-center justify-between gap-3 p-4 border-b border-neutral-800">
+      <div className="flex items-center justify-between gap-3 p-3.5 border-b border-neutral-800">
         <div className={`overflow-hidden transition-all duration-300 ${collapsed ? 'w-0 opacity-0' : 'w-full opacity-100'}`}>
           <h1 className="text-xl font-bold tracking-tight">{t.appName}</h1>
         </div>

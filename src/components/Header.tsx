@@ -1,4 +1,4 @@
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown, Globe, User } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { translations, type Language } from '../i18n/translations';
@@ -14,6 +14,7 @@ export function Header() {
   const { language, setLanguage } = useStore();
   const t = translations[language];
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [userTooltipOpen, setUserTooltipOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setDropdownOpen((open) => !open)}
-            className="inline-flex items-center gap-3 rounded-2xl px-4 py-2 text-neutral-700 focus:outline-none"
+            className="inline-flex items-center gap-3 rounded-2xl px-4 py-1 text-neutral-700 focus:outline-none"
           >
             <Globe size={20} className="text-neutral-600" />
             <span className="text-sm font-semibold text-neutral-900">{selectedLabel}</span>
@@ -63,6 +64,26 @@ export function Header() {
               ))}
             </div>
           ) : null}
+        </div>
+
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setUserTooltipOpen((visible) => !visible)}
+            onMouseEnter={() => setUserTooltipOpen(true)}
+            onMouseLeave={() => setUserTooltipOpen(false)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-neutral-100 text-neutral-700 transition-colors hover:bg-neutral-200 focus:outline-none"
+            aria-label="Demo user"
+          >
+            <User size={20} />
+          </button>
+          <div
+            className={`pointer-events-none absolute right-0 top-full z-20 mt-2 rounded-2xl bg-neutral-900 px-3 py-2 text-xs text-white shadow-lg transition-all duration-200 ${
+              userTooltipOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            Demo user
+          </div>
         </div>
       </div>
     </header>
