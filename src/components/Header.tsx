@@ -1,7 +1,7 @@
 import { ChevronDown, Globe, User } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../store/useStore';
-import { translations, type Language } from '../i18n/translations';
+import { type Language } from '../i18n/translations';
 
 const languageOptions: Array<{ value: Language; label: string }> = [
   { value: 'en', label: 'English' },
@@ -12,7 +12,6 @@ const languageOptions: Array<{ value: Language; label: string }> = [
 
 export function Header() {
   const { language, setLanguage } = useStore();
-  const t = translations[language];
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [userTooltipOpen, setUserTooltipOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -78,9 +77,8 @@ export function Header() {
             <User size={20} />
           </button>
           <div
-            className={`pointer-events-none absolute right-0 top-full z-20 mt-2 rounded-2xl bg-neutral-900 px-3 py-2 text-xs text-white shadow-lg transition-all duration-200 ${
-              userTooltipOpen ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`pointer-events-none absolute right-0 top-full z-20 mt-2 rounded-2xl bg-neutral-900 px-3 py-2 text-xs text-white shadow-lg transition-all duration-200 ${userTooltipOpen ? 'opacity-100' : 'opacity-0'
+              }`}
           >
             Demo user
           </div>
